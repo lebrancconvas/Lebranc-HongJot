@@ -11,7 +11,7 @@ import (
 
 func Start() {
 	router := NewRouter()
-	go router.Logger.Fatal(router.Start(":" + os.Getenv("PORT")))
+	go router.Logger.Fatal(router.Start(":" + os.Getenv("API_PORT")))
 
 	// Graceful Shutdown
 	shutdown := make(chan os.Signal, 1)
