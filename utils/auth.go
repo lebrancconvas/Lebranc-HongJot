@@ -7,8 +7,8 @@ import (
 )
 
 func Authenticated(username, password string, c echo.Context) (bool, error) {
-	adminUsername := os.Getenv("ADMIN_USERNAME")
-	adminPassword := os.Getenv("ADMIN_PASSWORD")
+	adminUsername := os.Getenv("API_USERNAME")
+	adminPassword := os.Getenv("API_PASSWORD")
 
 	if username == adminUsername && password == adminPassword {
 		return true, nil
