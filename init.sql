@@ -1,7 +1,7 @@
 CREATE TABLE IF NOT EXISTS spenders (
   "spender_id" serial4 UNIQUE PRIMARY KEY NOT NULL,
   "name" varchar(255) NOT NULL,
-  "email" string,
+  "email" text,
   "created_at" timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   "updated_at" timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   "used_flg" bool DEFAULT true
@@ -13,8 +13,8 @@ CREATE TABLE IF NOT EXISTS transactions (
     "amount" float,
     "category" int,
     "transaction_type" int,
-    "note" string,
-    "image_url" string,
+    "note" text,
+    "image_url" text,
     "spender_id" int,
     "created_at" timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
     "updated_at" timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
@@ -23,7 +23,7 @@ CREATE TABLE IF NOT EXISTS transactions (
 
 CREATE TABLE IF NOT EXISTS categories (
     "category_id" serial4 UNIQUE PRIMARY KEY NOT NULL,
-    "category" string,
+    "category" text,
     "created_at" timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
     "updated_at" timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
     "used_flg" bool DEFAULT true
@@ -31,7 +31,7 @@ CREATE TABLE IF NOT EXISTS categories (
 
 CREATE TABLE IF NOT EXISTS transaction_types (
     "transaction_type_id" serial4 UNIQUE PRIMARY KEY NOT NULL,
-    "type" string,
+    "type" text,
     "created_at" timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
     "updated_at" timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
     "used_flg" bool DEFAULT true
