@@ -18,6 +18,9 @@ func NewRouter() *echo.Echo {
 		v1 := api.Group("/v1")
 		{
 			v1.GET("/health", controller.Health)
+
+			// Admin
+			v1.GET("/expenses", controller.GetExpenses)
 		}
 	}
 
